@@ -1,0 +1,17 @@
+{
+  "id": "com.razagr.stremio",
+  "version": "1.0.4",
+  "type": "web",
+  "main": "index.html",
+  "title": "Stremio",
+  "appDescription": "Freedom to Stream",
+  "vendor": "RazaGR",
+  "icon": "icon.png",
+  "largeIcon": "largeIcon.png",
+  "iconColor": "#0f0226",
+  "splashBackground": "splash.png",
+  "bgColor": "#0f0226",
+  "resolution": "1920x1080",
+  "disableBackHistoryAPI": false,
+  "handlesRelaunch": false
+}

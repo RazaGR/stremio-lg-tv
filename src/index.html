@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1920, height=1080, user-scalable=no">
+  <title>Stremio</title>
+
+  <!-- Start DNS/TLS to Stremio while the boot screen is still painting, so the
+       handover costs less on TVs with a slow resolver. -->
+  <link rel="dns-prefetch" href="https://tv.strem.io">
+  <link rel="preconnect" href="https://tv.strem.io">
+  <link rel="dns-prefetch" href="https://api.strem.io">
+  <link rel="preconnect" href="https://api.strem.io">
+
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <!-- Boot screen. Replaced wholesale once Stremio opens. -->
+  <div id="boot" class="boot">
+    <div class="mark" aria-hidden="true"><span class="play"></span></div>
+    <h1 class="wordmark">Stremio</h1>
+
+    <p id="status" class="status">Starting&hellip;</p>
+
+    <!-- Blocking messages: offline, or firmware without WebAssembly. -->
+    <div id="error" class="error" hidden>
+      <div id="error-title" class="error-title"></div>
+      <div id="error-body" class="error-body"></div>
+      <div id="error-keys" class="error-keys"></div>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

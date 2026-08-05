@@ -1,0 +1,122 @@
+/* Boot screen styling.
+ *
+ * Kept deliberately cheap: no web fonts, no transitions on layout properties,
+ * no filters or box-shadows. TVs composite this on a weak GPU while the
+ * network work that actually matters is already in flight.
+ *
+ * Authored against Chromium 53 -- no CSS variables, no grid, no gap. */
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;              /* no scrollbars, no scroll repaint */
+  background: #0f0226;           /* matches splashBackground, avoids white flash */
+  color: #ffffff;
+  font-family: "LG Smart UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* ---- boot screen -------------------------------------------------------- */
+
+.boot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Flex centring rather than transforms: cheaper to composite, and avoids a
+     promoted layer on firmware that handles transforms poorly. */
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* Title-safe inset: TVs may overscan by up to ~5%. */
+  padding: 54px 96px;
+  text-align: center;
+}
+
+.boot[hidden] {
+  display: none;
+}
+
+/* The mark is drawn in CSS so the boot screen needs no image request. */
+.mark {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  border-radius: 52px;
+  background: #7c4ef0;
+  background: -webkit-linear-gradient(top, #8b5cf6, #5b21b6);
+  background: linear-gradient(to bottom, #8b5cf6, #5b21b6);
+}
+
+.play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -34px 0 0 -24px;       /* centre, then nudge right optically */
+  width: 0;
+  height: 0;
+  border-top: 34px solid transparent;
+  border-bottom: 34px solid transparent;
+  border-left: 56px solid #ffffff;
+}
+
+.wordmark {
+  margin-top: 40px;
+  font-size: 62px;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+}
+
+.status {
+  margin-top: 22px;
+  font-size: 28px;
+  font-weight: 300;
+  color: #b9a8e8;
+  min-height: 34px;              /* reserve space so text swaps do not jump */
+}
+
+/* ---- blocking messages -------------------------------------------------- */
+
+.error {
+  margin-top: 30px;
+  max-width: 1100px;
+}
+
+.error[hidden] {
+  display: none;
+}
+
+.error-title {
+  font-size: 40px;
+  font-weight: 400;
+  color: #ff6b6b;
+}
+
+.error-body {
+  margin-top: 16px;
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #d6cdf0;
+}
+
+.error-keys {
+  margin-top: 26px;
+  font-size: 24px;
+  color: #8f7fc4;
+}

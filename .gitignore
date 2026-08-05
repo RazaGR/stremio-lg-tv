@@ -1,0 +1,11 @@
+# Build output (the .ipk and its staging tree)
+/build/
+
+# macOS
+.DS_Store
+._*
+
+# Editors
+*.swp
+.idea/
+.vscode/
