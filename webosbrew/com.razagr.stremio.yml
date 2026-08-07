@@ -1,14 +1,6 @@
-# Submission file for the webOS Homebrew app repository.
-#
-# Copy this into packages/com.razagr.stremio.yml in a fork of
-# https://github.com/webosbrew/apps-repo and open a pull request.
-#
-# manifestUrl points at releases/latest/download/, so once this is merged the
-# channel picks up every future release automatically and this file never needs
-# touching again.
-
-# Display name of the application
-title: Stremio
+# Display name of the application. Deliberately not plain "Stremio": an official
+# Stremio app exists in the LG Content Store, and the two must not be confused.
+title: Stremio Launcher (Unofficial)
 
 # Publicly accessible HTTP/HTTPS URL to the listing icon
 iconUri: https://raw.githubusercontent.com/RazaGR/stremio-lg-tv/main/assets/icon160.png
@@ -24,13 +16,18 @@ pool: main
 requirements:
   # Stremio's engine is WebAssembly, which arrived in Chromium 57. webOS 3.x
   # (Chromium 38) and 4.x (Chromium 53) cannot run it.
-  webosRelease: '>=5.0'
+  webosRelease: ">=5.0"
 
 description: |
-  # Stremio
+  # Stremio Launcher (Unofficial)
 
   Opens the official Stremio TV interface on LG webOS televisions, so Stremio
   can be used with the TV remote instead of casting from a phone or PC.
+
+  **This is not the official Stremio app and is not affiliated with Stremio.**
+  Stremio publishes an official LG TV app in the LG Content Store for webOS 5.0+
+  models — if it is available in your region, prefer it. This launcher exists for
+  sets where that listing is not offered.
 
   ## Features
 

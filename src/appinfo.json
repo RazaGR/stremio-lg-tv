@@ -1,10 +1,10 @@
 {
   "id": "com.razagr.stremio",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "type": "web",
   "main": "index.html",
-  "title": "Stremio",
-  "appDescription": "Freedom to Stream",
+  "title": "Stremio Launcher (Unofficial)",
+  "appDescription": "Unofficial launcher for Stremio on LG TVs",
   "vendor": "RazaGR",
   "icon": "icon.png",
   "largeIcon": "largeIcon.png",
